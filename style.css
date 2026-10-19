@@ -1,0 +1,23 @@
+:root{color-scheme:light dark;--bg:light-dark(#f3f6f0,#101b18);--panel:light-dark(#fff,#1a2924);--text:light-dark(#142c25,#edf5ef);--sub:light-dark(#425c50,#b9cabe);--line:light-dark(#899d90,#6c8978);--soft:light-dark(#dfebdd,#294234);--accent:light-dark(#22583d,#b4dfba);--on:light-dark(#fff,#102a1a);--error:light-dark(#f9e7df,#512e25);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+*{box-sizing:border-box}body{margin:0}button{font:inherit;color:inherit;background:var(--panel);border:1px solid var(--line);border-radius:9px;min-height:44px;padding:5px 8px;touch-action:manipulation}button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}button:disabled{opacity:.5}button:active{filter:brightness(.93)}
+.game{width:100%;max-width:460px;min-height:632px;height:100svh;margin:auto;padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));display:grid;grid-template-rows:minmax(48px,auto) minmax(282px,1fr) minmax(104px,auto) minmax(44px,auto);gap:6px}
+.header{display:flex;align-items:center;justify-content:space-between;gap:6px}.header h1{font-size:1.2rem;font-weight:600;margin:0}.header p{font-size:.8rem;margin:2px 0;color:var(--sub)}.header-actions{display:flex;gap:5px}.header-actions button{font-size:.85rem;min-width:44px;padding:4px 6px}
+.board{display:grid;grid-template-columns:14px repeat(6,minmax(0,1fr));grid-template-rows:16px repeat(6,minmax(44px,1fr));gap:2px;min-width:0}.axis{display:grid;place-items:center;color:var(--sub);font-size:.75rem}.cell{position:relative;display:grid;place-items:center;padding:0;min-width:0;min-height:44px;border-radius:7px;font-size:1.5rem;font-variant-numeric:tabular-nums}.cell[data-given=true]{background:var(--soft)}.cell[data-given=true]::after{content:"·";position:absolute;right:4px;top:0;font-size:1rem;color:var(--sub)}.cell[data-related=true]{border-color:var(--accent)}.cell[data-selected=true]{border:3px solid var(--accent);background:var(--panel)}.cell[data-user=true]{color:var(--accent);font-weight:600}.cell .empty{font-size:1rem;color:var(--sub)}
+.inspector{background:var(--soft);border-radius:10px;padding:6px 8px;display:grid;grid-template-rows:minmax(44px,auto) auto;gap:3px;min-width:0}.inspector[data-error=true]{background:var(--error)}.navigation{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;align-items:center}.navigation button{padding:0;font-size:.85rem}.readout{align-self:center;min-width:0}#selection{margin:0 0 2px;text-align:center;font-size:.85rem;font-weight:600}#message{margin:0;align-self:center;font-size:.8rem;line-height:1.35;overflow-wrap:anywhere}.numbers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px}.number{min-width:0;font-size:1.45rem;background:var(--accent);color:var(--on);border-color:var(--accent);padding:0}.tools{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:minmax(44px,auto);gap:6px}.tools button{min-width:0;padding:3px;font-size:.85rem;white-space:normal}.primary{background:var(--accent);color:var(--on);border-color:var(--accent)}
+dialog{max-width:min(92vw,480px);max-height:88svh;overflow:auto;border:1px solid var(--line);border-radius:16px;padding:20px;background:var(--panel);color:var(--text);line-height:1.65}dialog::backdrop{background:#0008}dialog h2{font-size:1.2rem;margin-top:0}.dialog-actions{display:flex;gap:12px;justify-content:flex-end}dialog form button{width:100%}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+/* Preserve enlargement and small-screen access instead of clipping controls. */
+@media(min-width:600px){.game{max-height:850px}}
+@media(min-resolution:1dppx){html{font-size:100%}}
+@media(prefers-reduced-motion:no-preference){button{transition:background-color .1s}}
+
+/* Native modal keeps VoiceOver exploration inside the number choices. */
+#number-dialog{position:fixed;margin:0;width:min(330px,calc(100vw - 24px));max-width:none;max-height:calc(100svh - 24px);padding:14px;line-height:1.4}
+#number-dialog h2{font-size:1rem;margin:0 0 8px}
+.picker-context{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.picker-context button{font-size:.85rem}
+#picker-message{min-height:2.8em;margin:6px 0;font-size:.85rem;overflow-wrap:anywhere}
+#number-dialog .numbers{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+#number-dialog .number{height:48px}
+#number-cancel{width:100%;margin-top:8px;font-size:.85rem}
+
+
