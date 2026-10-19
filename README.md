@@ -12,16 +12,6 @@
 
 압축을 풀고 `index.html`을 브라우저로 열면 플레이할 수 있습니다. 로컬 파일의 저장 지원은 브라우저마다 다르므로, 실제 배포는 GitHub Pages의 HTTPS 주소를 권장합니다.
 
-## GitHub Pages에 올리기
-
-1. GitHub에 공개 저장소(예: `blank-card`)를 만듭니다.
-2. **이 폴더 안의 파일과 tests 폴더**를 저장소 최상위에 올립니다. ZIP 파일 자체를 올리는 것이 아닙니다.
-3. 저장소 **Settings → Pages → Build and deployment → Source → Deploy from a branch**를 선택합니다.
-4. Branch를 **main**, 폴더를 **/(root)**로 선택하고 Save를 누릅니다.
-5. 배포가 완료되면 Pages 설정에 표시되는 주소를 아이폰 Safari로 엽니다.
-
-`index.html`이 저장소 최상위에 있어야 합니다. `Blank-Card-Web/index.html`처럼 한 단계 안에 올리지 마세요. 자세한 과정은 [INSTALL.md](INSTALL.md)에 있습니다.
-
 ## 구현한 구성
 
 - 6×6, 숫자 1~6. 무작위 문제를 만들고 정답 유일성 및 논리 풀이 가능성을 검사합니다.
